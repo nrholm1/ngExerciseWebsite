@@ -21,9 +21,17 @@ export class ExerciseComponent implements OnInit {
                             muscleGroup: "back & core",
                             exType: "calisthenics",
                             difficulty: 10};
+  
+  exercise3: exercise = {id: 3,
+                        name: "Squat",
+                        description: "Sit down motion but not quite",
+                        muscleGroup: "legs & core",
+                        exType: "compund",
+                        difficulty: 3};
 
   _exercises = {1: this.exercise1,
-                2: this.exercise2};
+                2: this.exercise2,
+                3: this.exercise3};
 
   constructor() { }
 

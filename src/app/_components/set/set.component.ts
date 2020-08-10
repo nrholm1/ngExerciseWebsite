@@ -18,9 +18,15 @@ export class SetComponent implements OnInit {
                   exerciseId: 2,
                   setCount: 3,
                   repCount: 3};
+                  
+  set3: set = {id: 3,
+              exerciseId: 3,
+              setCount: 5,
+              repCount: 10};
 
   _sets = {1: this.set1,
-           2: this.set2};
+           2: this.set2,
+           3: this.set3};
 
   constructor() { }
 

@@ -16,7 +16,7 @@ export class WorkoutComponent implements OnInit {
                       ratingCount: 10,
                       dateCreated: new Date};
 
-  setListIds: number[] = [1,2];
+  setListIds: number[] = [1,2,3];
 
   constructor() { }
 
