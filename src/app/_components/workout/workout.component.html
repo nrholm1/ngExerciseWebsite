@@ -1,1 +1,8 @@
-<p>workout works!</p>
+<h1>{{ _workout.id }}: {{ _workout.title }}</h1>
+<div>
+    <p>{{ _workout.description }} lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Maiores minus tenetur sunt cum nisi eius cupiditate dolore <br> earum laudantium eaque deleniti quasi nobis accusantium ipsum nostrum, <br> eligendi, odio enim corporis!</p>
+</div>
+
+<div *ngFor="let x of setListIds">
+    <app-set-list [id]=x></app-set-list>
+</div>

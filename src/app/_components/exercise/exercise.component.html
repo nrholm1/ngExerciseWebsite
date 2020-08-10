@@ -1,12 +1,8 @@
 <div>
-    <ul>
-        <li *ngFor="let ex of _exercises">
-            {{ ex.id }} <br>
-            {{ ex.name }} <br>
-            {{ ex.description }} <br>
-            {{ ex.difficulty }} <br>
-            {{ ex.exType }} <br>
-            {{ ex.muscleGroup }} <br>
-        </li>
-    </ul>
+    {{ _exercises[id].id }} |  
+    {{ _exercises[id].name }} | 
+    {{ _exercises[id].description }}  <br>
+    {{ _exercises[id].difficulty }} | 
+    {{ _exercises[id].exType }} | 
+    {{ _exercises[id].muscleGroup }}  
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { setList } from 'src/app/_models/setList';
 
 @Component({
   selector: 'app-set-list',
@@ -6,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./set-list.component.scss']
 })
 export class SetListComponent implements OnInit {
+  @Input() id: number = 1;
+
+  setList1: setList = {id: 1,
+                       workoutId: 1,
+                       setId: 1,
+                       orderNo: 2,
+                       dateAdded: new Date};
+  setList2: setList = {id: 1,
+                      workoutId: 1,
+                      setId: 2,
+                      orderNo: 1,
+                      dateAdded: new Date};
+  
+  _setLists = {1: this.setList1,
+               2: this.setList2};
 
   constructor() { }
 
@@ -13,3 +29,10 @@ export class SetListComponent implements OnInit {
   }
 
 }
+
+
+// id: number,
+//     workoutId: number,
+//     setId: number,
+//     orderNo: number,
+//     dateAdded: Date
