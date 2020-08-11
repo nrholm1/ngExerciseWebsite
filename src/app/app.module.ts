@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularMaterialModule } from './shared/angular-material-module';
 
 import { AppComponent } from './app.component';
 import { ExerciseComponent } from './_components/exercise/exercise.component';
@@ -9,6 +10,8 @@ import { WorkoutComponent } from './_components/workout/workout.component';
 import { ModelModule } from './_models/index';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

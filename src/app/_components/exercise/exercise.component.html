@@ -1,8 +1,9 @@
 <div>
-    {{ _exercises[id].id }} |  
-    {{ _exercises[id].name }} | 
-    {{ _exercises[id].description }}  <br>
-    {{ _exercises[id].difficulty }} | 
-    {{ _exercises[id].exType }} | 
-    {{ _exercises[id].muscleGroup }}  
+    <mat-card-title style="text-align: left;">{{ _exercises[id].name }}</mat-card-title> 
+    <mat-card-content style="text-align: left;">{{ _exercises[id].description }}</mat-card-content>  <br>
+    <mat-card-content>
+        <b><i class="far fa-gem"></i> {{ _exercises[id].difficulty }}  </b>
+        <b><i class="fas fa-dumbbell"></i> {{ _exercises[id].exType }} </b> 
+        <b><i class="fas fa-running"></i> {{ _exercises[id].muscleGroup }}</b>
+    </mat-card-content>  
 </div>

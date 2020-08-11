@@ -1,18 +1,20 @@
 <div>
     <table>
         <tr class="field">
-            <td>
-                <app-exercise
-                [id]="_sets[id].exerciseId"></app-exercise>
-            </td>
-            <td>
-                Reps:<br>
-                {{ _sets[id].repCount }}
-            </td>
-            <td>
-                Sets:<br>
-                {{ _sets[id].setCount }}
-            </td>
+            <mat-card>
+                <td>
+                    <app-exercise
+                    [id]="_sets[id].exerciseId"></app-exercise>
+                </td>
+                <td class="reps-field">
+                    Reps:<br>
+                    {{ _sets[id].repCount }}
+                </td>
+                <td>
+                    Sets:<br>
+                    {{ _sets[id].setCount }}
+                </td>
+            </mat-card>
         </tr>
     </table>
 </div>
