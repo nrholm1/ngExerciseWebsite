@@ -7,6 +7,8 @@ import { SetComponent } from './_components/set/set.component';
 import { SetListComponent } from './_components/set-list/set-list.component';
 import { WorkoutComponent } from './_components/workout/workout.component';
 import { ModelModule } from './_models/index';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,10 +16,12 @@ import { ModelModule } from './_models/index';
     ExerciseComponent,
     SetComponent,
     SetListComponent,
-    WorkoutComponent
+    WorkoutComponent,
+    NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
