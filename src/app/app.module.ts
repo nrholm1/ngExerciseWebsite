@@ -10,7 +10,7 @@ import { WorkoutComponent } from './_components/workout/workout.component';
 import { ModelModule } from './_models/index';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     NoopAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
