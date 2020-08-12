@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { setList } from 'src/app/_models/setList';
+import { SetListService } from 'src/app/_services/set-list.service';
 
 @Component({
   selector: 'app-set-list',
@@ -25,15 +26,21 @@ export class SetListComponent implements OnInit {
                       orderNo: 3,
                       dateAdded: new Date};
   
-  _setLists = {1: this.setList1,
-               2: this.setList2,
-               3: this.setList3};
+  // _setLists = {1: this.setList1,
+  //              2: this.setList2,
+  //              3: this.setList3};
+  
+  _setLists: setList[];
 
-  constructor() { }
+  constructor(private setListService: SetListService) { }
 
   ngOnInit(): void {
+    this.getSetLists();
   }
 
+  async getSetLists() {
+    this._setLists = await this.setListService.getSetLists();
+  }
 }
 
 

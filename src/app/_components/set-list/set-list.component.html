@@ -2,10 +2,10 @@
     <table>
         <tr>
             <td>
-                <h2 style="margin: 5px;">{{ _setLists[id].orderNo }}</h2>
+                <h2 style="margin: 5px;">{{ _setLists[id - 1].orderNo }}</h2>
             </td>
             <td>
-                <app-set [id]="_setLists[id].setId"></app-set>
+                <app-set [id]="_setLists[id - 1].setId"></app-set>
             </td>
         </tr>
     </table>
