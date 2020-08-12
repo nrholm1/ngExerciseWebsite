@@ -7,7 +7,7 @@ import { set } from '../_models/set';
   providedIn: 'root'
 })
 export class SetService {
-  apiUrl: string = environment.api;
+  apiUrl: string = environment.api + "/set";
 
   constructor(private http: HttpClient) { }
 

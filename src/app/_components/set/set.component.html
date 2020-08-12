@@ -4,15 +4,15 @@
             <mat-card>
                 <td>
                     <app-exercise
-                    [id]="_sets[id].exerciseId"></app-exercise>
+                    [id]="sets[id - 1].exerciseId"></app-exercise>
                 </td>
                 <td class="reps-field">
                     Reps:<br>
-                    {{ _sets[id].repCount }}
+                    {{ sets[id - 1].repCount }}
                 </td>
                 <td>
                     Sets:<br>
-                    {{ _sets[id].setCount }}
+                    {{ sets[id - 1].setCount }}
                 </td>
             </mat-card>
         </tr>
