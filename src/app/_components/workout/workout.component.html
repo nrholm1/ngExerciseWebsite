@@ -3,6 +3,9 @@
     <p>{{ _workout.description }} lorem ipsum, dolor sit amet consectetur <br> adipisicing elit. Maiores minus tenetur sunt cum nisi eius cupiditate dolore <br> earum laudantium eaque deleniti quasi nobis accusantium ipsum nostrum, <br> eligendi, odio enim corporis!</p>
 </div>
 
-<div *ngFor="let x of setListIds">
-    <app-set-list [id]=x></app-set-list>
+<div *ngFor="let x of setListIndices">
+    <app-set-list [workoutId]=_workout.id
+                  (setListIndices)="retrieveSetListIds($event)"></app-set-list>
 </div>
+
+<!-- cannot retrieve any setListIds, as the event is only fired after the first setListComponent is loaded... -->

@@ -18,4 +18,8 @@ export class SetListService {
   async getSetListById(id: number) {
     return await this.http.get<setList>(this.apiUrl + "/" + id).toPromise();
   }
+
+  async getSetListsByWorkoutId(workoutId: number) {
+    return await this.http.get<setList[]>(this.apiUrl + "/workoutId=" + workoutId).toPromise();
+  }
 }

@@ -11,6 +11,7 @@ import { ModelModule } from './_models/index';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -26,9 +27,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     NoopAnimationsModule,
     AngularMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { setList } from 'src/app/_models/setList';
 import { SetListService } from 'src/app/_services/set-list.service';
 
@@ -8,44 +8,31 @@ import { SetListService } from 'src/app/_services/set-list.service';
   styleUrls: ['./set-list.component.scss']
 })
 export class SetListComponent implements OnInit {
-  @Input() id: number = 1;
+  @Input() workoutId: number = 1;
+  @Input() id: number;
 
-  setList1: setList = {id: 1,
-                       workoutId: 1,
-                       setId: 1,
-                       orderNo: 1,
-                       dateAdded: new Date};
-  setList2: setList = {id: 2,
-                      workoutId: 1,
-                      setId: 2,
-                      orderNo: 2,
-                      dateAdded: new Date};
-  setList3: setList = {id: 3,
-                      workoutId: 1,
-                      setId: 3,
-                      orderNo: 3,
-                      dateAdded: new Date};
-  
-  // _setLists = {1: this.setList1,
-  //              2: this.setList2,
-  //              3: this.setList3};
-  
+  @Output() setListIndices = new EventEmitter<number[]>();
+
   _setLists: setList[];
 
   constructor(private setListService: SetListService) { }
 
   ngOnInit(): void {
-    this.getSetLists();
+    this.getSetListsByWorkoutId(this.workoutId);
   }
 
   async getSetLists() {
     this._setLists = await this.setListService.getSetLists();
   }
+
+  async getSetListsByWorkoutId(id: number) {
+    console.log("calling this");
+    this._setLists = await this.setListService.getSetListsByWorkoutId(id);
+    this.onSetListRetrieval(this._setLists);
+  }
+
+  onSetListRetrieval(setListIndices: setList[]) {
+    console.log("calling event");
+    this.setListIndices.emit(setListIndices.map(setList => setList.id));
+  }
 }
-
-
-// id: number,
-//     workoutId: number,
-//     setId: number,
-//     orderNo: number,
-//     dateAdded: Date
