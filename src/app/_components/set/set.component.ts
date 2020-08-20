@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { set } from '../../_models/set';
-import { SetService } from 'src/app/_services/set.service';
 
 @Component({
   selector: 'app-set',
@@ -9,17 +8,12 @@ import { SetService } from 'src/app/_services/set.service';
   styleUrls: ['./set.component.scss']
 })
 export class SetComponent implements OnInit {
-  @Input() id: number;
+  @Input() _set: set;
 
-  sets: set[];
-
-  constructor(private setService: SetService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getSets();
-  }
-
-  async getSets() {
-    this.sets = await this.setService.getSets();
   }
 }
+
+// rethink where the list of sets/setlists is made - right now a lot of calls to the server are made at bad times, and not a lot is cached

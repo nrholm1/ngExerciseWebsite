@@ -29,7 +29,6 @@ export class WorkoutComponent implements OnInit {
   ngOnInit(): void {
     this.setWorkoutId();
     this.getWorkoutById(this.workoutId);
-    setTimeout(() => console.log("setListIds = " + this.setListIndices), 300);
   }
 
   setWorkoutId(): void {

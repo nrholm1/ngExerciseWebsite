@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { set } from '../_models/set';
 
@@ -17,5 +17,14 @@ export class SetService {
 
   async getSetById(id: number) {
     return await this.http.get<set>(this.apiUrl + "/" + id).toPromise();
+  }
+
+  async getSetsByIds(ids: number[]): Promise<set[]> {
+    let url = this.apiUrl + "/ids";
+    let idsJson = JSON.stringify({"ids": ids});
+    let httpHeaders = new HttpHeaders({"Content-Type": "application/json"});
+    let options = {headers: httpHeaders};
+
+    return await this.http.post<set[]>(url, idsJson, options).toPromise();
   }
 }

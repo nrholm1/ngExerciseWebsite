@@ -14,4 +14,8 @@ export class ExerciseService {
   async getExercises() {
     return await this.http.get<exercise[]>(this.apiUrl).toPromise();
   }
+
+  async getExerciseById(id: number) {
+    return await this.http.get<exercise>(this.apiUrl + "/" + id).toPromise();
+  }
 }

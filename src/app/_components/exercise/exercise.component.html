@@ -1,9 +1,11 @@
-<div>
-    <mat-card-title style="text-align: left;">{{ exerciseList[id].name }}</mat-card-title> 
-    <mat-card-content style="text-align: left;">{{ exerciseList[id].description }}</mat-card-content>  <br>
-    <mat-card-content>
-        <b><i class="far fa-gem"></i> {{ exerciseList[id].difficulty }}  </b>
-        <b><i class="fas fa-dumbbell"></i> {{ exerciseList[id].exType }} </b> 
-        <b><i class="fas fa-running"></i> {{ exerciseList[id].muscleGroup }}</b>
-    </mat-card-content>
+<div *ngIf="isDataAvailable">
+    <div>
+        <mat-card-title style="text-align: left;">{{ _exercise.name }}</mat-card-title> 
+        <mat-card-content style="text-align: left;">{{ _exercise.description }}</mat-card-content>  <br>
+        <mat-card-content>
+            <b><i class="far fa-gem"></i> {{ _exercise.difficulty }}  </b>
+            <b><i class="fas fa-dumbbell"></i> {{ _exercise.exType }} </b> 
+            <b><i class="fas fa-running"></i> {{ _exercise.muscleGroup }}</b>
+        </mat-card-content>
+    </div>    
 </div>

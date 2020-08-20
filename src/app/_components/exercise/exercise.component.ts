@@ -9,17 +9,24 @@ import { ExerciseService } from 'src/app/_services/exercise.service';
 })
 export class ExerciseComponent implements OnInit {
   @Input() id: number;
+
+  isDataAvailable = false;
   
+  _exercise: exercise;
   exerciseList: exercise[];
 
   constructor(private exerciseService: ExerciseService) { }
 
   ngOnInit(): void {
-    this.getExerciseList();
+    this.getExercise().then(() => this.isDataAvailable = true);
   }
 
   async getExerciseList() {
     this.exerciseList = await this.exerciseService.getExercises();
-    console.log(this.exerciseList);
+    // console.log(this.exerciseList);
+  }
+
+  async getExercise() {
+    this._exercise = await this.exerciseService.getExerciseById(this.id);
   }
 }

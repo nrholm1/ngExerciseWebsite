@@ -1,12 +1,14 @@
-<div>
-    <table>
-        <tr>
-            <td>
-                <h2 style="margin: 5px;">{{ _setLists[id - 1].orderNo }}</h2>
-            </td>
-            <td>
-                <app-set [id]="_setLists[id - 1].setId"></app-set>
-            </td>
-        </tr>
-    </table>
+<div *ngIf="isDataAvailable">
+    <div *ngFor="let setList of _setLists">
+        <table>
+            <tr>
+                <td>
+                    <h2 style="margin: 5px;">{{ setList.orderNo }}</h2>
+                </td>
+                <td>
+                    <app-set [_set]="_sets[setList.setId - 1]"></app-set>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
