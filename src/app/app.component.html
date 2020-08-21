@@ -1,2 +1,12 @@
 <app-navbar></app-navbar>
-<app-workout></app-workout>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+            <app-workout></app-workout>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <app-footer></app-footer> -->

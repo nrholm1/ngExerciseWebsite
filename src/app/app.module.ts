@@ -7,11 +7,11 @@ import { ExerciseComponent } from './_components/exercise/exercise.component';
 import { SetComponent } from './_components/set/set.component';
 import { SetListComponent } from './_components/set-list/set-list.component';
 import { WorkoutComponent } from './_components/workout/workout.component';
-import { ModelModule } from './_models/index';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { RouterModule } from '@angular/router';
     SetComponent,
     SetListComponent,
     WorkoutComponent,
-    NavbarComponent
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

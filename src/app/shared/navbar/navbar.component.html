@@ -1,6 +1,14 @@
 <mat-toolbar color="primary">
-    <span>
+    <span class="title">
         <i class="fas fa-dumbbell"></i>
         Workout Planner
     </span>
+    <div class="nav-link-container">
+        <a class="nav-link"
+        [routerLink]="['/']" routerLinkActive="router-link-active">Create Workout</a>
+        <a class="nav-link"
+        [routerLink]="['/']" routerLinkActive="router-link-active">Browse Workouts</a>
+        <a class="nav-link"
+        [routerLink]="['/']" routerLinkActive="router-link-active">Add Exercise</a>
+    </div>
 </mat-toolbar>

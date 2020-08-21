@@ -1,0 +1,21 @@
+.nav-link-container {
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    margin-top: 0.31rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+}
+
+.nav-link {
+    margin-left: 1rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffa;
+}

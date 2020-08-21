@@ -1,5 +1,12 @@
+mat-card {
+    background-color: #ffffef; //ddeeff = original
+}
+
 .field td {
-    // border: solid 1px black;
     padding: 10px;
     text-align: center;
+}
+
+.count-field {
+    font-weight: 500;
 }
