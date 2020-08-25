@@ -1,0 +1,6 @@
+<div>
+    <mat-card *ngFor="let workout of _workouts">
+        <a [routerLink]="['/workout/id', workout.id]" routerLinkActive="router-link-active"> {{ workout.id }} {{workout.title}}</a>
+        <mat-card-content> {{workout.description}}</mat-card-content>
+    </mat-card>
+</div>

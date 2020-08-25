@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { workout } from 'src/app/_models/workout';
 import { WorkoutService } from 'src/app/_services/workout.service';
-import { SetListService } from 'src/app/_services/set-list.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-workout',
@@ -10,30 +10,26 @@ import { SetListService } from 'src/app/_services/set-list.service';
   styleUrls: ['./workout.component.scss']
 })
 export class WorkoutComponent implements OnInit {
+  isDataAvailable = false;
+  routeSub: Subscription;
+
   setListIndices: number[];
   
-  _workout: workout = {id: 1,
-                      setListId: 1,                      
-                      title: "Super calisthenics and strength",
-                      description: "Funny workout haha",
-                      avgDifficulty: 9,
-                      rating: 5,
-                      ratingCount: 10,
-                      dateCreated: new Date};
+  _workout: workout; 
   
-  workoutId: number = 1;
+  workoutId: number;
 
   constructor(private workoutService: WorkoutService,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.setWorkoutId();
+    this.setWorkoutId()
+      .then(() => this.isDataAvailable = true);
     this.getWorkoutById(this.workoutId);
   }
 
-  setWorkoutId(): void {
-    // this.workoutId = this.route.queryParams['id'];
-    this.workoutId = 1;
+  async setWorkoutId() {
+    this.routeSub = this.route.params.subscribe(x => this.workoutId = x['id']);
   }
 
   async getWorkoutById(id: number) {

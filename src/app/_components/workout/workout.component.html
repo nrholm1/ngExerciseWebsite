@@ -1,14 +1,16 @@
-<div>
-    <h1>{{ _workout.id }}: {{ _workout.title }}</h1>
+<div *ngIf="isDataAvailable">
     <div>
-        <p>{{ _workout.description }} lorem ipsum, dolor sit amet consectetur 
-            <br> adipisicing elit. Maiores minus tenetur sunt cum nisi eius cupiditate dolore 
-            <br> earum laudantium eaque deleniti quasi nobis accusantium ipsum nostrum, 
-            <br> eligendi, odio enim corporis!
-        </p>
+        <h1>{{ _workout.id }}: {{ _workout.title }}</h1>
+        <div>
+            <p>{{ _workout.description }} lorem ipsum, dolor sit amet consectetur 
+                <br> adipisicing elit. Maiores minus tenetur sunt cum nisi eius cupiditate dolore 
+                <br> earum laudantium eaque deleniti quasi nobis accusantium ipsum nostrum, 
+                <br> eligendi, odio enim corporis!
+            </p>
+        </div>
     </div>
-</div>
-
-<div>
-    <app-set-list [workoutId]=_workout.id></app-set-list>
+    
+    <div>
+        <app-set-list [workoutId]=_workout.id></app-set-list>
+    </div>
 </div>

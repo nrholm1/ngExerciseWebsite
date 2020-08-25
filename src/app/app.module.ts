@@ -10,8 +10,10 @@ import { WorkoutComponent } from './_components/workout/workout.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './_components/dashboard/dashboard.component';
+import { WorkoutListComponent } from './_components/workout-list/workout-list.component';
 
 
 @NgModule({
@@ -22,14 +24,16 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     SetListComponent,
     WorkoutComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    DashboardComponent,
+    WorkoutListComponent
   ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
-    RouterModule.forRoot([])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
