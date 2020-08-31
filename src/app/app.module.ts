@@ -14,6 +14,9 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
 import { WorkoutListComponent } from './_components/workout-list/workout-list.component';
+import { CreateExerciseComponent } from './_components/create-exercise/create-exercise.component';
+import { CreateWorkoutComponent } from './_components/create-workout/create-workout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,14 +29,17 @@ import { WorkoutListComponent } from './_components/workout-list/workout-list.co
     NavbarComponent,
     SidebarComponent,
     DashboardComponent,
-    WorkoutListComponent
+    WorkoutListComponent,
+    CreateExerciseComponent,
+    CreateWorkoutComponent
   ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

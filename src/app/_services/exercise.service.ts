@@ -18,4 +18,8 @@ export class ExerciseService {
   async getExerciseById(id: number) {
     return await this.http.get<exercise>(this.apiUrl + "/" + id).toPromise();
   }
+
+  async createExercise(_exercise: exercise) {
+    return this.http.post(this.apiUrl, _exercise).toPromise();
+  }
 }
