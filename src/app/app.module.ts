@@ -17,6 +17,8 @@ import { WorkoutListComponent } from './_components/workout-list/workout-list.co
 import { CreateExerciseComponent } from './_components/create-exercise/create-exercise.component';
 import { CreateWorkoutComponent } from './_components/create-workout/create-workout.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateSetListComponent } from './_components/create-set-list/create-set-list.component';
+import { CreateSetComponent } from './_components/create-set/create-set.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     WorkoutListComponent,
     CreateExerciseComponent,
-    CreateWorkoutComponent
+    CreateWorkoutComponent,
+    CreateSetListComponent,
+    CreateSetComponent
   ],
   imports: [
     BrowserModule,

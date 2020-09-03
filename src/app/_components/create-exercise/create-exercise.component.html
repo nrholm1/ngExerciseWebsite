@@ -1,43 +1,4 @@
 <h1>Add Exercise</h1>
-<!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="form-row">
-        <div class="form-group col">
-            <label for="name">Name</label>
-            <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
-            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                <div *ngIf="f.name.errors.required">Name is required</div>
-            </div>
-        </div>
-        <div class="form-group col">
-            <label for="description">Description</label>
-            <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
-            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-                <div *ngIf="f.description.errors.required">Description is required</div>
-            </div>
-        </div>
-        <div class="form-group col">
-            <label for="muscleGroup">Muscle Group</label>
-            <input type="text" formControlName="muscleGroup" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.muscleGroup.errors }" />
-            <div *ngIf="submitted && f.muscleGroup.errors" class="invalid-feedback">
-                <div *ngIf="f.muscleGroup.errors.required">Muscle group is required</div>
-            </div>
-        </div>
-        <div class="form-group col">
-            <label for="exType">Exercise Type</label>
-            <input type="text" formControlName="exType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.exType.errors }" />
-            <div *ngIf="submitted && f.exType.errors" class="invalid-feedback">
-                <div *ngIf="f.exType.errors.required">Exercise type is required</div>
-            </div>
-        </div>
-        <div class="form-group col">
-            <label for="difficulty">Difficulty Level</label>
-            <input type="text" formControlName="difficulty" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.difficulty.errors }" />
-            <div *ngIf="submitted && f.difficulty.errors" class="invalid-feedback">
-                <div *ngIf="f.difficulty.errors.required">Difficulty is required</div>
-            </div>
-        </div>
-    </div>
-</form> -->
 
 <div class="form-container">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
