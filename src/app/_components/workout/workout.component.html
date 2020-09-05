@@ -1,16 +1,19 @@
 <div *ngIf="isDataAvailable">
-    <div>
-        <h1>{{ _workout.id }}: {{ _workout.title }}</h1>
-        <div>
-            <p>{{ _workout.description }} lorem ipsum, dolor sit amet consectetur 
-                <br> adipisicing elit. Maiores minus tenetur sunt cum nisi eius cupiditate dolore 
-                <br> earum laudantium eaque deleniti quasi nobis accusantium ipsum nostrum, 
-                <br> eligendi, odio enim corporis!
-            </p>
-        </div>
-    </div>
-    
-    <div>
-        <app-set-list [workoutId]=_workout.id></app-set-list>
-    </div>
+    <mat-list>
+        <mat-list-item>
+            <div class="description-container">
+                <h1>{{ _workout.id }} - {{ _workout.title }}</h1>
+                <div>
+                    <p>{{ _workout.description }}</p>
+                </div>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <div class="sets-container">
+                <h2>Sets</h2>
+                <app-set-list [workoutId]=_workout.id></app-set-list>
+            </div>
+        </mat-list-item>
+    </mat-list>
 </div>

@@ -1,17 +1,16 @@
-<div>create this works</div>
-
-<form class="example-form" ngNoForm> <!-- ngNoForm used to force native HTML5 validation and thereby circumventing NodeInjection error --> 
-    <mat-form-field class="example-full-width">
-        <input type="text"
+<form class="add-set" ngNoForm> <!-- ngNoForm used to force native HTML5 validation and thereby circumventing NodeInjection error --> 
+    <mat-form-field class="full-width">
+        <input (keyup)="keyPress($event)"
+                type="text"
                 placeholder="Pick exercise"
                 aria-label="Exercise"
                 matInput
-                [formControl]="myControl"
+                [formControl]="exercisePicker"
                 [matAutocomplete]="auto">
     
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of options" [value]="option">
-            {{option}}
+        <mat-autocomplete isOpen #auto="matAutocomplete">
+            <mat-option *ngFor="let option of exerciseOptions" [value]="option.name">
+            {{ option.name }} <em style="font-size: small; text-align: right;">- {{ option.exType }} / Difficulty: {{ option.difficulty }}</em> 
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>

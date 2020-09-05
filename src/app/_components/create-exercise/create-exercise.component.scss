@@ -6,6 +6,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     cursor: hand;
+    min-width: 150px;
   }
   button:hover {
     background-color: #cfd8dc;
@@ -19,12 +20,32 @@ button {
 
   h1 {
     margin-top: 0.5em;
+    margin-left: 1em;
   }
   .form-container {
     margin-bottom: 1em;
+    margin-left: 1em;
   }
 
   .main-select {
+    min-width: 120px;
     margin-right: 1em;
   }
 
+.field {
+    min-width: 100px;
+    width: 20%;
+
+    margin-bottom: 1em;
+}
+
+.muscle-field {
+  min-width: 100px;
+  width: 20%;
+
+  margin-bottom: 1em;
+}
+
+.description-field {
+  min-height: 100px;
+}

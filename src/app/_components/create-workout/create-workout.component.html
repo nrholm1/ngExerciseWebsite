@@ -1,33 +1,23 @@
 <h1>Create Workout</h1>
 
 <div class="form-container">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        
-    <mat-form-field appearance="fill">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      
+    <mat-form-field class="descriptive-field" appearance="fill">
         <mat-label>Title</mat-label>
         <input matInput formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-      </mat-form-field>
+    </mat-form-field>
       <br>
 
     
-    <mat-form-field appearance="fill">
+    <mat-form-field class="descriptive-field" appearance="fill">
         <mat-label>Description</mat-label>
-        <textarea matInput formControlName="description"></textarea>
-      </mat-form-field>
+        <textarea class="description" matInput formControlName="description"></textarea>
+    </mat-form-field>
       <br> 
-
-      
-
-    </form>
-
-    <mat-card>
-        <mat-card class="set">Exercise 1</mat-card>
-        <mat-card class="set">Exercise 2</mat-card>
-        <mat-card class="set">Exercise 3</mat-card>
-        <app-create-set-list></app-create-set-list>
-        <button mat-stroked-button color="primary">Add exercise</button>
-    </mat-card>
-
-    <button mat-raised-button color="primary">Create</button>
+  </form>
   
+  <app-create-set-list></app-create-set-list>
+
+  <button class="create-button" mat-raised-button color="primary">Create</button>
 </div>

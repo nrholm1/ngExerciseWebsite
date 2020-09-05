@@ -15,7 +15,7 @@ export class CreateExerciseComponent implements OnInit {
   submitted = false;
 
   difficultyLevel: number[] = [1,2,3,4,5,6,7,8,9,10];
-  muscleGroups: string[] = ["Chest","Back","Legs","Shoulders","Triceps","Biceps",];
+  muscleGroups: string[] = [null, "Chest","Back","Legs","Shoulders","Triceps","Biceps",];
   exTypes: string[] = ["Compound", "Calisthenics", "Cardio", "Explosive", "Stretch"];
 
   constructor(

@@ -22,4 +22,8 @@ export class ExerciseService {
   async createExercise(_exercise: exercise) {
     return this.http.post(this.apiUrl, _exercise).toPromise();
   }
+
+  async searchExercisesByName(query: string) {
+    return this.http.get<exercise[]>(this.apiUrl + "/name=" + query).toPromise();
+  }
 }

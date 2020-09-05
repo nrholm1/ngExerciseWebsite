@@ -3,26 +3,26 @@
 <div class="form-container">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         
-    <mat-form-field appearance="fill">
+    <mat-form-field class="field" appearance="fill">
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
       </mat-form-field>
       <br>
 
     
-    <mat-form-field appearance="fill">
+    <mat-form-field class="field" appearance="fill">
         <mat-label>Description</mat-label>
-        <textarea matInput formControlName="description"></textarea>
+        <textarea class="description-field" matInput formControlName="description"></textarea>
       </mat-form-field>
       <br> 
 
-    <mat-form-field class="main-select" appearance="fill">
+    <mat-form-field class="main-select muscle-field" appearance="fill">
         <mat-label>Main Muscle Group</mat-label>
         <mat-select formControlName="mainMuscleGroup">
           <mat-option *ngFor="let m of muscleGroups" value="{{m}}">{{m}}</mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field class="muscle-field" appearance="fill">
         <mat-label>Secondary Muscle Group</mat-label>
         <mat-select formControlName="secondaryMuscleGroup">
             <mat-option *ngFor="let m of muscleGroups" value="{{m}}">{{m}}</mat-option>
@@ -30,7 +30,7 @@
     </mat-form-field>
       <br>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field class="field" appearance="fill">
         <mat-label>Exercise Type</mat-label>
         <mat-select formControlName="exType">
           <mat-option *ngFor="let x of exTypes" value="{{x}}">{{x}}</mat-option>
@@ -38,7 +38,7 @@
     </mat-form-field>
       <br>
 
-      <mat-form-field appearance="fill">
+      <mat-form-field class="field" appearance="fill">
         <mat-label>Select Difficulty Level</mat-label>
         <mat-select formControlName="difficulty">
           <mat-option *ngFor="let n of difficultyLevel" value="{{n}}">{{ n }}</mat-option>

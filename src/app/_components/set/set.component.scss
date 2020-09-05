@@ -1,5 +1,12 @@
 mat-card {
-    background-color: #ffffef; //ddeeff = original
+    //background-color: #ffffef; //ddeeff = original
+    min-width: 550px;
+    width: 100%;
+}
+
+.exercise-container {
+    min-width: 300px;
+    width: 100%;
 }
 
 .field td {

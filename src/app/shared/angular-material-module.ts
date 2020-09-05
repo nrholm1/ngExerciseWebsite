@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatListModule } from '@angular/material/list';
 
 import { NgModule } from '@angular/core';
 
@@ -17,7 +18,8 @@ const modules: any[] = [
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatListModule
 ];
 
 @NgModule({
