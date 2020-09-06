@@ -1,14 +1,20 @@
-
 <mat-card class="add-sets-card">
     <h2>Add sets</h2>
-        <mat-card class="set">Exercise 1
-            <form [formGroup]="form"> <!-- (ngSubmit)="onSubmit()" > -->
-                <mat-form-field class="field" appearance="fill">
-                    <mat-label>Sets</mat-label>
-                    <input matInput formControlName="sets" class="form-control" [ngClass]="{ 'is-invalid': submitted }" />
-                </mat-form-field>
-                  <br>
-            </form>
+        <mat-card class="set" *ngFor="let id of exerciseIds">
+            <app-exercise [id]="id"></app-exercise>
+             <!-- Insert Form with rep and set counter Here -->
         </mat-card>    
-    <app-create-set></app-create-set>
+    <app-create-set (selectExerciseEvent)="addExerciseId($event)"></app-create-set>
 </mat-card>
+
+<!-- <form [formGroup]="form"> (ngSubmit)="onSubmit()" > 
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Sets</mat-label>
+        <input matInput formControlName="sets" class="form-control" />
+    </mat-form-field>
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Reps</mat-label>
+        <input matInput formControlName="reps" class="form-control" />
+    </mat-form-field>
+      <br>
+</form> -->

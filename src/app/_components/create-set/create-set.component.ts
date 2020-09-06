@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { SetService } from 'src/app/_services/set.service';
 import { ExerciseService } from 'src/app/_services/exercise.service';
 import { exercise } from 'src/app/_models/exercise';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-create-set',
@@ -14,11 +15,23 @@ export class CreateSetComponent implements OnInit {
   exercisePicker = new FormControl();
   query: string;
   
+  @Output() exerciseIdSelection = new EventEmitter<number>();
+
   constructor(private setService: SetService,
               private exerciseService: ExerciseService) { }
 
   ngOnInit(this): void {
+    this.addSelectExerciseEventListener();
     this.disableEnterKeyReloadTrigger();
+  }
+
+  addSelectExerciseEventListener(): void {
+    window.addEventListener('keydown', (e) =>
+      {
+        if(e.keyCode == 13) 
+          this.selectExerciseEvent(+this.exercisePicker.value.id);
+        console.log(this.exercisePicker.value);
+      },true);
   }
 
   disableEnterKeyReloadTrigger(): void {
@@ -40,8 +53,8 @@ export class CreateSetComponent implements OnInit {
   } 
 
   keyPress(event: KeyboardEvent) {
-    console.log(`event triggered | ${event.keyCode}`);
-    console.log(this.exercisePicker.value);
+    // console.log(`event triggered | ${event.keyCode}`);
+    // console.log(this.exercisePicker.value);
 
     // disable default=resend query when pressing arrow keys for navigating dropdown
     if (this.arrowKeyPressed(event.keyCode))
@@ -54,10 +67,6 @@ export class CreateSetComponent implements OnInit {
     setTimeout(() => this.searchExerciseByName(inputQuery), 300);
   }
 
-  onSubmit() {
-    console.log("Submit triggered");
-  }
-
   async searchExerciseByName(query: string) {
     let queryResult  = await this.exerciseService.searchExercisesByName(query);
 
@@ -65,4 +74,8 @@ export class CreateSetComponent implements OnInit {
     console.log(this.exerciseOptions);
   }
 
+  selectExerciseEvent(exerciseId: number) {
+    console.log(`emit <${exerciseId}>`);
+    this.exerciseIdSelection.emit(exerciseId);
+  } 
 }

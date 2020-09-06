@@ -1,23 +1,10 @@
 <h1>Create Workout</h1>
 
 <div class="form-container">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      
-    <mat-form-field class="descriptive-field" appearance="fill">
-        <mat-label>Title</mat-label>
-        <input matInput formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-    </mat-form-field>
-      <br>
-
-    
-    <mat-form-field class="descriptive-field" appearance="fill">
-        <mat-label>Description</mat-label>
-        <textarea class="description" matInput formControlName="description"></textarea>
-    </mat-form-field>
-      <br> 
-  </form>
-  
   <app-create-set-list></app-create-set-list>
 
-  <button class="create-button" mat-raised-button color="primary">Create</button>
+  <button class="create-button" mat-raised-button color="primary">Next</button>
 </div>
+
+<!-- After pressing next, create-setlist is hidden and form with title and description is shown -->
+<!-- When pressing final submit, workout is POSTed to db, followed by setlist obj's -->

@@ -2,7 +2,8 @@ export interface exercise {
     id: number,
     name: string,
     description: string,
-    muscleGroup: string,
+    mainMuscleGroup: string,
+    secondaryMuscleGroup: string,
     exType: string,
     difficulty: number
 }
