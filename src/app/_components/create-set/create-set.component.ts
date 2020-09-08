@@ -14,6 +14,7 @@ export class CreateSetComponent implements OnInit {
   exerciseOptions: exercise[];
   exercisePicker = new FormControl();
   query: string;
+  timeout: any;
   
   @Output() exerciseIdSelection = new EventEmitter<number>();
 
@@ -28,11 +29,12 @@ export class CreateSetComponent implements OnInit {
   addSelectExerciseEventListener(): void {
     window.addEventListener('keydown', (e) =>
       {
-        if(e.keyCode == 13 && this.exercisePicker.value != "") {
-          this.selectExerciseEvent(+this.exerciseOptions[0].id);
+        if(e.keyCode == 13 
+            && this.exercisePicker.value != ""
+            && this.exerciseOptions.length == 1) {
+            this.selectExerciseEvent(+this.exerciseOptions[0].id);
           this.exercisePicker.setValue("");
         }
-        console.log(this.exerciseOptions);
       },true);
   }
 
@@ -66,7 +68,8 @@ export class CreateSetComponent implements OnInit {
 
     const inputQuery = this.exercisePicker.value;
 
-    setTimeout(() => this.searchExerciseByName(inputQuery), 300);
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => this.searchExerciseByName(inputQuery), 300);
   }
 
   async searchExerciseByName(query: string) {
