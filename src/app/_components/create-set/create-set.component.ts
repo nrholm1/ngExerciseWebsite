@@ -28,9 +28,11 @@ export class CreateSetComponent implements OnInit {
   addSelectExerciseEventListener(): void {
     window.addEventListener('keydown', (e) =>
       {
-        if(e.keyCode == 13) 
-          this.selectExerciseEvent(+this.exercisePicker.value.id);
-        console.log(this.exercisePicker.value);
+        if(e.keyCode == 13 && this.exercisePicker.value != "") {
+          this.selectExerciseEvent(+this.exerciseOptions[0].id);
+          this.exercisePicker.setValue("");
+        }
+        console.log(this.exerciseOptions);
       },true);
   }
 
@@ -79,3 +81,5 @@ export class CreateSetComponent implements OnInit {
     this.exerciseIdSelection.emit(exerciseId);
   } 
 }
+
+// get id from currently selected/highlighted exercise and emit it to create-setlist-component
