@@ -32,8 +32,7 @@ export class CreateSetComponent implements OnInit {
         if(e.keyCode == 13 
             && this.exercisePicker.value != ""
             && this.exerciseOptions.length == 1) {
-            this.selectExerciseEvent(+this.exerciseOptions[0].id);
-          this.exercisePicker.setValue("");
+          this.selectExerciseEvent(+this.exerciseOptions[0].id);
         }
       },true);
   }
@@ -69,20 +68,27 @@ export class CreateSetComponent implements OnInit {
     const inputQuery = this.exercisePicker.value;
 
     clearTimeout(this.timeout);
-    this.timeout = setTimeout(() => this.searchExerciseByName(inputQuery), 300);
+    this.timeout = setTimeout(() => this.searchExerciseByName(inputQuery), 100);
   }
 
   async searchExerciseByName(query: string) {
-    let queryResult  = await this.exerciseService.searchExercisesByName(query);
+    let queryResult: exercise[]; 
+
+    if (query != "")
+      queryResult = await this.exerciseService.searchExercisesByName(query);
 
     this.exerciseOptions = queryResult;
     console.log(this.exerciseOptions);
   }
 
   selectExerciseEvent(exerciseId: number) {
-    console.log(`emit <${exerciseId}>`);
     this.exerciseIdSelection.emit(exerciseId);
+    setTimeout(() => this.clearAutocompleteField(),50);
   } 
+
+  clearAutocompleteField() {
+    this.exercisePicker.setValue("");
+  }
 }
 
 // get id from currently selected/highlighted exercise and emit it to create-setlist-component

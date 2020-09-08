@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
 export class CreateSetListComponent implements OnInit {
   form: FormGroup;
 
-  exerciseIds: number[];//= [1,3,4,5,6,7,8,9,10];
+  exerciseIds: number[] = [];//= [1,3,4,5,6,7,8,9,10];
 
   addExerciseId(newExerciseId: number) {
     console.log(this.exerciseIds);
@@ -19,6 +19,9 @@ export class CreateSetListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      console.log(this.exerciseIds);
+    }, 7000);
   }
 
 }

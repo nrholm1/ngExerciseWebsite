@@ -4,17 +4,5 @@
             <app-exercise [id]="id"></app-exercise>
              <!-- Insert Form with rep and set counter Here -->
         </mat-card>    
-    <app-create-set (selectExerciseEvent)="addExerciseId($event)"></app-create-set>
+    <app-create-set (exerciseIdSelection)="addExerciseId($event)"></app-create-set>
 </mat-card>
-
-<!-- <form [formGroup]="form"> (ngSubmit)="onSubmit()" > 
-    <mat-form-field class="field" appearance="fill">
-        <mat-label>Sets</mat-label>
-        <input matInput formControlName="sets" class="form-control" />
-    </mat-form-field>
-    <mat-form-field class="field" appearance="fill">
-        <mat-label>Reps</mat-label>
-        <input matInput formControlName="reps" class="form-control" />
-    </mat-form-field>
-      <br>
-</form> -->
