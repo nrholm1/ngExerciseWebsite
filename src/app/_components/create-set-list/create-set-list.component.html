@@ -1,8 +1,8 @@
 <mat-card class="add-sets-card">
     <h2>Add sets</h2>
-        <mat-card class="set" *ngFor="let id of exerciseIds">
-            <app-exercise [id]="id"></app-exercise>
+        <mat-card class="set" *ngFor="let setList of setLists">
+            <app-exercise [id]="sets[setList.orderNo].exerciseId"></app-exercise>
              <!-- Insert Form with rep and set counter Here -->
         </mat-card>    
-    <app-create-set (exerciseIdSelection)="addExerciseId($event)"></app-create-set>
+    <app-create-set (exerciseIdSelection)="addSetList($event)"></app-create-set>
 </mat-card>

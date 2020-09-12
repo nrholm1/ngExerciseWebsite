@@ -56,17 +56,12 @@ export class CreateSetComponent implements OnInit {
   } 
 
   keyPress(event: KeyboardEvent) {
-    // console.log(`event triggered | ${event.keyCode}`);
-    // console.log(this.exercisePicker.value);
-
     // disable default=resend query when pressing arrow keys for navigating dropdown
     if (this.arrowKeyPressed(event.keyCode))
       return;
     
-    // if (this.exercisePicker.)
-
     const inputQuery = this.exercisePicker.value;
-
+    
     clearTimeout(this.timeout);
     this.timeout = setTimeout(() => this.searchExerciseByName(inputQuery), 100);
   }
@@ -78,7 +73,6 @@ export class CreateSetComponent implements OnInit {
       queryResult = await this.exerciseService.searchExercisesByName(query);
 
     this.exerciseOptions = queryResult;
-    console.log(this.exerciseOptions);
   }
 
   selectExerciseEvent(exerciseId: number) {
